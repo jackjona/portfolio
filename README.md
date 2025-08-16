@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/36e99f17-e82a-4255-ab9d-75a77a06d757" alt="my (Jack Jona) logo" />
+  <img src="https://raw.githubusercontent.com/jackjona/portfolio/refs/heads/main/public/logo.png"  height="128" alt="my (Jack Jona) logo" />
 </p>
 
 # Portfolio

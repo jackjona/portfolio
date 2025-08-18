@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ArrowIcon from "./components/ArrowIcon";
 
 export const metadata = {
   title: "Jack Jona",
@@ -99,7 +100,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-between p-8 sm:px-20 font-sans">
       <main className="w-full max-w-3xl mx-auto flex flex-col items-center gap-10 text-center">
         <Image
-          className="dark:invert"
+          className="dark:invert rounded-3xl"
           src="/logo.png"
           alt="Jack Jona logo"
           width={180}
@@ -112,8 +113,8 @@ export default function Home() {
             Jack Jona
           </h1>
           <p className="mt-6 text-xl sm:text-2xl text-balance text-gray-700 dark:text-gray-300">
-            Hi, I’m Jack — A Front-End Web Developer focused on building web
-            experiences people love to use.
+            Hi, I&apos;m Jack — A Front-End Web Developer focused on building
+            web experiences people love to use.
           </p>
         </header>
 
@@ -171,7 +172,7 @@ export default function Home() {
                                    transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                         aria-label={`${name} live site`}
                       >
-                        Live <span aria-hidden>↗</span>
+                        Live <ArrowIcon />
                       </a>
                     )}
                     <a
@@ -184,7 +185,7 @@ export default function Home() {
                                  transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                       aria-label={`${name} GitHub repository`}
                     >
-                      GitHub <span aria-hidden>↗</span>
+                      GitHub <ArrowIcon />
                     </a>
                   </div>
 
@@ -244,7 +245,7 @@ export default function Home() {
                      hover:text-blue-600 focus:outline-none focus-visible:ring-2 
                      focus-visible:ring-blue-500"
         >
-          Got some ideas? Let’s talk.
+          Got some ideas? Let&apos;s talk.
         </a>
 
         <div className="mt-6 text-sm text-gray-600 dark:text-gray-400">

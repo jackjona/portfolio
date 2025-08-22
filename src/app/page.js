@@ -236,18 +236,70 @@ export default function Home() {
             ))}
           </div>
         </section>
+        <section aria-labelledby="contact" className="w-full">
+          <h2
+            id="contact"
+            className="mt-10 mb-8 inline-block text-2xl sm:text-4xl font-bold 
+                     "
+          >
+            Got some ideas? Let&apos;s talk.
+          </h2>
+
+          <form
+            action="https://formspree.io/f/xnqlllez"
+            method="POST"
+            className="flex flex-wrap flex-col gap-8 justify-center items-center max-w-2xl mx-auto"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              className="rounded-full border max-w-lg border-gray-300 dark:border-gray-700 px-4 py-2 text-sm
+                 text-gray-800 dark:text-gray-200 bg-transparent
+                 transition duration-200 ease-in-out
+                 hover:bg-blue-100 dark:hover:bg-blue-900
+                 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              className="rounded-full border max-w-lg border-gray-300 dark:border-gray-700 px-4 py-2 text-sm
+                 text-gray-800 dark:text-gray-200 bg-transparent
+                 transition duration-200 ease-in-out
+                 hover:bg-blue-100 dark:hover:bg-blue-900
+                 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+              rows="4"
+              className="w-full rounded-2xl border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm
+                 text-gray-800 dark:text-gray-200 bg-transparent resize-none
+                 transition duration-200 ease-in-out
+                 hover:bg-blue-100 dark:hover:bg-blue-900
+                 hover:scale-[1.01] hover:border-blue-500 dark:hover:border-blue-400
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+            <button
+              type="submit"
+              className="rounded-full bg-blue-600 text-white px-6 py-2 text-sm font-semibold
+                 transition duration-200 ease-in-out
+                 hover:bg-blue-700 hover:scale-105
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Send
+            </button>
+          </form>
+        </section>
       </main>
 
       <footer className="w-full max-w-3xl mx-auto text-center mt-12">
-        <a
-          href="mailto:contact@jackjona.com"
-          className="inline-block text-2xl sm:text-4xl font-bold no-underline hover:underline 
-                     hover:text-blue-600 focus:outline-none focus-visible:ring-2 
-                     focus-visible:ring-blue-500"
-        >
-          Got some ideas? Let&apos;s talk.
-        </a>
-
         <div className="mt-6 text-sm text-gray-600 dark:text-gray-400">
           <p>
             This project is open source under the GNU General Public License v3.

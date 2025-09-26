@@ -150,6 +150,7 @@ export default function Home() {
                     "bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm",
                     "p-5 text-left transition duration-300 ease-out",
                     "hover:-translate-y-0.5 hover:shadow-sm",
+                    "overflow-hidden",
                     spanClass,
                   ].join(" ")}
                 >
@@ -160,16 +161,16 @@ export default function Home() {
                     {description}
                   </p>
 
-                  <div className="mt-4 flex items-center gap-2">
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
                     {live && (
                       <a
                         href={live}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 rounded-full border border-gray-300 dark:border-gray-700
-                                   px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
-                                   hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
-                                   transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                   px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
+                   hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
+                   transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                         aria-label={`${name} live site`}
                       >
                         Live <ArrowIcon />
@@ -180,9 +181,9 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 rounded-full border border-gray-300 dark:border-gray-700
-                                 px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
-                                 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
-                                 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                 px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
+                 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
+                 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                       aria-label={`${name} GitHub repository`}
                     >
                       GitHub <ArrowIcon />
@@ -192,7 +193,7 @@ export default function Home() {
                   {/* subtle corner accent on hover */}
                   <span
                     className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent 
-                               group-hover:ring-gray-300 dark:group-hover:ring-gray-700 transition"
+               group-hover:ring-gray-300 dark:group-hover:ring-gray-700 transition"
                     aria-hidden
                   />
                 </article>
@@ -226,7 +227,7 @@ export default function Home() {
               <span
                 key={skill}
                 className="rounded-full border border-gray-300 dark:border-gray-700 px-3 py-1 text-sm 
-                           text-gray-800 dark:text-gray-200 cursor-pointer
+                           text-gray-800 dark:text-gray-200
                            transition duration-200 ease-in-out
                            hover:bg-blue-100 dark:hover:bg-blue-900
                            hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400"
@@ -250,7 +251,11 @@ export default function Home() {
             method="POST"
             className="flex flex-wrap flex-col gap-8 justify-center items-center max-w-2xl mx-auto"
           >
+            <label htmlFor="name" className="sr-only">
+              Your Name
+            </label>
             <input
+              id="name"
               type="text"
               name="name"
               placeholder="Your Name"
@@ -262,7 +267,11 @@ export default function Home() {
                  hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400
                  focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <label htmlFor="email" className="sr-only">
+              Your Email
+            </label>
             <input
+              id="email"
               type="email"
               name="email"
               placeholder="Your Email"
@@ -274,7 +283,11 @@ export default function Home() {
                  hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400
                  focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <label htmlFor="message" className="sr-only">
+              Your Message
+            </label>
             <textarea
+              id="message"
               name="message"
               placeholder="Your Message"
               required

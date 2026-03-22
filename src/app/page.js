@@ -1,12 +1,6 @@
 import Image from "next/image";
 import ArrowIcon from "./components/ArrowIcon";
 
-export const metadata = {
-  title: "Jack Jona",
-  description:
-    "A Front-End Web Developer, building web experiences that people love to use.",
-};
-
 // Skills array
 const SKILLS = [
   "TypeScript",

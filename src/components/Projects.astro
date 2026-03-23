@@ -1,7 +1,7 @@
 ---
-import ArrowIcon from '../assets/ArrowIcon.svg';
+import ArrowIcon from "../assets/ArrowIcon.svg";
 import { PROJECTS } from "../data/projects";
-import { BENTO_PATTERN } from '../data/pattern';
+import { BENTO_PATTERN } from "../data/pattern";
 ---
 
 <section aria-labelledby="projects" class="w-full">
@@ -10,58 +10,60 @@ import { BENTO_PATTERN } from '../data/pattern';
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
-    {PROJECTS.map(({ name, description, live, repo }, i) => {
-      const spanClass = BENTO_PATTERN[i % BENTO_PATTERN.length];
-      return (
-        <article
-          class={[
-            "group relative rounded-xl border border-gray-200 dark:border-gray-800",
-            "bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm",
-            "p-5 text-left transition duration-300 ease-out",
-            "hover:-translate-y-0.5 hover:shadow-sm",
-            "overflow-hidden",
-            spanClass,
-          ].join(" ")}
-        >
-          <h3 class="text-lg font-semibold tracking-tight">{name}</h3>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-            {description}
-          </p>
+    {
+      PROJECTS.map(({ name, description, live, repo }, i) => {
+        const spanClass = BENTO_PATTERN[i % BENTO_PATTERN.length];
+        return (
+          <article
+            class={[
+              "group relative rounded-xl border border-gray-200 dark:border-gray-800",
+              "bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm",
+              "p-5 text-left transition duration-300 ease-out",
+              "hover:-translate-y-0.5 hover:shadow-sm",
+              "overflow-hidden",
+              spanClass,
+            ].join(" ")}
+          >
+            <h3 class="text-lg font-semibold tracking-tight">{name}</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+              {description}
+            </p>
 
-          <div class="mt-4 flex flex-wrap items-center gap-2">
-            {live && (
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              {live && (
+                <a
+                  href={live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 rounded-full border border-gray-300 dark:border-gray-700
+                  px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
+                  hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
+                  transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+                >
+                  Live <ArrowIcon />
+                </a>
+              )}
               <a
-                href={live}
+                href={repo}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 rounded-full border border-gray-300 dark:border-gray-700
-                  px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
-                  hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
-                  transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                Live <ArrowIcon />
-              </a>
-            )}
-            <a
-              href={repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 rounded-full border border-gray-300 dark:border-gray-700
                 px-2.5 py-1 text-xs text-gray-800 dark:text-gray-200
                 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900
-                transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-            >
-              GitHub <ArrowIcon />
-            </a>
-          </div>
+                transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+              >
+                GitHub <ArrowIcon />
+              </a>
+            </div>
 
-          <span
-            class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent 
+            <span
+              class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent 
               group-hover:ring-gray-300 dark:group-hover:ring-gray-700 transition"
-            aria-hidden="true"
-          />
-        </article>
-      );
-    })}
+              aria-hidden="true"
+            />
+          </article>
+        );
+      })
+    }
   </div>
 </section>

@@ -1,0 +1,30 @@
+---
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<div class="min-h-screen flex flex-col items-center p-8 sm:px-20 font-sans">
+  <main
+    class="w-full max-w-3xl mx-auto flex flex-col items-center gap-10 text-center"
+  >
+    <img
+      src="/logo.png"
+      alt="Jack Jona logo"
+      width="180"
+      height="38"
+      class="rounded-3xl dark:invert"
+    />
+
+    <h1 class="text-4xl sm:text-7xl font-black tracking-tight">Jack Jona</h1>
+
+    <p class="mt-0 text-xl sm:text-2xl text-gray-700 dark:text-gray-300">
+      Hi, I'm Jack! I build experiences on the internet that people love to use
+      and enjoy interacting with.
+    </p>
+
+    <Projects />
+    <Skills />
+    <ContactForm />
+  </main>
+</div>

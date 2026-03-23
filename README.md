@@ -8,7 +8,7 @@ This is the repository for my portfolio website.
 
 ## Built With:
 
-- Next.js
+- Astro
 - TailwindCSS
 
 ---

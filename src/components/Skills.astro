@@ -3,17 +3,24 @@ import { SKILLS } from "../data/skills";
 ---
 
 <section aria-labelledby="skills" class="w-full">
-  <h2 class="mt-10 mb-4 text-2xl sm:text-3xl font-semibold">Skills</h2>
+  <h2
+    class="mt-10 mb-4 text-2xl sm:text-3xl font-semibold
+    motion-preset-fade motion-duration-500"
+  >
+    Skills
+  </h2>
 
   <div class="flex flex-wrap gap-2 justify-center">
     {
-      SKILLS.map((skill) => (
+      SKILLS.map((skill, i) => (
         <span
-          class="rounded-full border border-gray-300 dark:border-gray-700 px-3 py-1 text-sm 
+          class="rounded-full border border-gray-300 dark:border-gray-700 px-3 py-1 text-sm
           text-gray-800 dark:text-gray-200
           transition duration-200 ease-in-out
           hover:bg-slate-100 dark:hover:bg-slate-900
-          hover:scale-105 hover:border-slate-500 dark:hover:border-slate-400"
+          hover:scale-105 hover:border-slate-500 dark:hover:border-slate-400
+          motion-preset-fade motion-duration-300"
+          style={`animation-delay: ${i * 30}ms`}
         >
           {skill}
         </span>

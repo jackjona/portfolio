@@ -2,10 +2,15 @@
 import ArrowIcon from "../assets/ArrowIcon.svg";
 import { PROJECTS } from "../data/projects";
 import { BENTO_PATTERN } from "../data/pattern";
+import { ANIMATION_DELAYS } from "../data/delays";
 ---
 
 <section aria-labelledby="projects" class="w-full">
-  <h2 id="projects" class="mt-2 mb-6 text-2xl sm:text-3xl font-semibold">
+  <h2
+    id="projects"
+    class="mt-2 mb-6 text-2xl sm:text-3xl font-semibold
+      motion-preset-fade motion-duration-500 motion-delay-300"
+  >
     Some of my projects
   </h2>
 
@@ -13,15 +18,17 @@ import { BENTO_PATTERN } from "../data/pattern";
     {
       PROJECTS.map(({ name, description, live, repo }, i) => {
         const spanClass = BENTO_PATTERN[i % BENTO_PATTERN.length];
+        const delay = ANIMATION_DELAYS[i] ?? "motion-delay-600";
         return (
           <article
             class={[
               "group relative rounded-xl border border-gray-200 dark:border-gray-800",
               "bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm",
               "p-5 text-left transition duration-300 ease-out",
-              "hover:-translate-y-0.5 hover:shadow-sm",
-              "overflow-hidden",
+              "hover:-translate-y-0.5 hover:shadow-sm overflow-hidden",
+              "motion-preset-slide-up-sm motion-duration-500 motion-ease-spring-smooth",
               spanClass,
+              delay,
             ].join(" ")}
           >
             <h3 class="text-lg font-semibold tracking-tight">{name}</h3>
@@ -57,8 +64,8 @@ import { BENTO_PATTERN } from "../data/pattern";
             </div>
 
             <span
-              class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent 
-              group-hover:ring-gray-300 dark:group-hover:ring-gray-700 transition"
+              class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent
+            group-hover:ring-gray-300 dark:group-hover:ring-gray-700 transition"
               aria-hidden="true"
             />
           </article>
